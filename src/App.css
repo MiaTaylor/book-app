@@ -1,0 +1,704 @@
+/*--------------------------------------------------------------
+>>> TABLE OF CONTENTS:
+----------------------------------------------------------------
+# Normalize
+# Typography
+# Elements
+# Forms
+# Navigation
+# Links
+# Layout
+# CSS Flex-Box
+# CSS Grid
+# Animation
+
+# Content
+
+# Media Queries
+--------------------------------------------------------------*/
+
+/* From 0 to 768px - Mobile First */
+/*--------------------------------------------------------------
+# Normalize
+--------------------------------------------------------------*/
+* {
+  font-variant-ligatures: none;
+}
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+main,
+menu,
+nav,
+section {
+  display: block;
+}
+
+button,
+input,
+optgroup,
+select,
+textarea {
+  color: inherit;
+  font: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+input {
+  line-height: normal;
+}
+
+textarea {
+  overflow: auto;
+}
+
+button,
+html input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+  -webkit-appearance: button;
+  cursor: pointer;
+}
+
+.m-top-1 {
+  margin-top: 1em;
+}
+
+.m-bottom-1 {
+  margin-bottom: 1em;
+}
+
+.m-1 {
+  margin: 1em;
+}
+
+.p-1 {
+  padding: 1em;
+}
+
+.p-top-1 {
+  padding-top: 1em;
+}
+
+.p-left-1 {
+  padding-left: 1em;
+}
+
+.p-right-1 {
+  padding-right: 1em;
+}
+
+.d-inline {
+  display: inline;
+}
+
+.bg-white {
+  background-color: #ffffff;
+  border-radius: 10px;
+}
+
+.header-height {
+  height: 70px;
+}
+
+/*--------------------------------------------------------------
+# Typography
+--------------------------------------------------------------*/
+
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap");
+
+body,
+li,
+a,
+ul li {
+  font-family: "Quicksand", sans-serif;
+  color: #f89156;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Quicksand", sans-serif;
+  color: #000080;
+}
+
+:-webkit-any(article, aside, nav, section) h1 {
+  margin-block-start: 0.67em;
+}
+
+.fa-light {
+  color: #fc6780;
+}
+
+q:after,
+blockquote:after {
+  text-align: right;
+}
+
+blockquote::before {
+  text-align: left;
+}
+
+.text-align-center {
+  text-align: center;
+}
+
+/*--------------------------------------------------------------
+# Elements
+--------------------------------------------------------------*/
+html {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+*,
+*:before,
+*:after {
+  -webkit-box-sizing: inherit;
+  -moz-box-sizing: inherit;
+  box-sizing: inherit;
+}
+
+body {
+  width: 100%;
+  letter-spacing: 1.5px;
+  padding: 0 0;
+  margin: 0 0 100px 0;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  background: #ffafbd;
+  background: -webkit-linear-gradient(to right, #ffc3a0, #ffafbd);
+  background: linear-gradient(to right, #ffc3a0, #ffafbd);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+ul {
+  list-style: none;
+  margin-block-start: 0;
+  margin-block-end: 0;
+  padding-inline-start: 0;
+}
+
+aside {
+  background-color: #000080;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  font-size: 1.3em;
+  padding: 1em 0.5em;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+}
+
+header {
+  position: absolute;
+  width: 100%;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  font-size: 1.3em;
+  padding: 0 0.5em;
+  z-index: 2;
+}
+
+article {
+  background-color: white;
+  border-radius: 10px;
+  padding: 1em;
+  margin: 1em 0;
+}
+
+/*--------------------------------------------------------------
+# Forms
+--------------------------------------------------------------*/
+button,
+input[type="button"],
+input[type="submit"] {
+  cursor: pointer;
+  background-color: transparent;
+  background-repeat: no-repeat;
+  border: none;
+  cursor: pointer;
+  overflow: hidden;
+  outline: none;
+}
+
+input[type="text"],
+input[type="text"]:focus,
+textarea:focus {
+  color: #000080;
+  outline: none;
+}
+
+::placeholder {
+  color: rgba(0, 0, 128, 0.439);
+  opacity: 1; /* Firefox */
+}
+
+:-ms-input-placeholder {
+  /* Internet Explorer 10-11 */
+  color: rgba(0, 0, 128, 0.439);
+}
+
+::-ms-input-placeholder {
+  /* Microsoft Edge */
+  color: rgba(0, 0, 128, 0.439);
+}
+
+/*--------------------------------------------------------------
+# Navigation
+--------------------------------------------------------------*/
+.nav-menu {
+  background-color: white;
+  padding: 2em;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  line-height: 2em;
+}
+
+.pagination {
+  background-color: white;
+  padding: 1em;
+  margin-top: 1em;
+  border-radius: 10px;
+}
+
+.active-link {
+  color: #000080;
+  font-weight: bold;
+}
+
+.orange {
+  color: #f89156;
+}
+
+.lightgray {
+  color: lightgray;
+}
+
+/*--------------------------------------------------------------
+# Links
+--------------------------------------------------------------*/
+a,
+a:visited,
+a:focus,
+a:active {
+  position: relative;
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+}
+
+a:hover,
+a:active {
+  outline: 0;
+}
+
+/*--------------------------------------------------------------
+# Layout
+--------------------------------------------------------------*/
+.layout {
+  position: relative;
+}
+
+/*--------------------------------------------------------------
+# CSS Flex-Box
+--------------------------------------------------------------*/
+.flex-row-even {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+.flex-row-between {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.flex-row-around {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.flex-column {
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: column;
+}
+
+.flex-column-center {
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: column;
+  align-items: center;
+}
+
+.flex-item {
+  display: flex;
+  background-color: white;
+  border-radius: 10px;
+  padding: 1em;
+  height: 250px;
+}
+
+.align-self-center {
+  align-self: center;
+}
+
+/*--------------------------------------------------------------
+# CSS Grid
+--------------------------------------------------------------*/
+.grid-container {
+  display: grid;
+  grid-template-columns: auto;
+  grid-template-rows: auto;
+}
+
+/*--------------------------------------------------------------
+# Animations
+--------------------------------------------------------------*/
+.my-navbar-collapse {
+  transition: height 2s ease;
+  -moz-transition: height 2s ease;
+  -ms-transition: height 2s ease;
+  -o-transition: height 2s ease;
+  -webkit-transition: height 2s ease;
+  height: 0;
+  overflow: hidden;
+}
+
+.my-navbar-collapse.show {
+  height: 80vh;
+}
+
+.slide-down {
+  transition: height 1s ease;
+  -moz-transition: height 1s ease;
+  -ms-transition: height 1s ease;
+  -o-transition: height 1s ease;
+  -webkit-transition: height 1s ease;
+  height: 0;
+  overflow: hidden;
+}
+
+.slide-down.show {
+  height: 40vh;
+  margin-top: -10px;
+}
+
+.slide-out {
+  width: 0;
+  height: 0;
+  -webkit-transition: all 1s ease-in-out;
+  -moz-transition: all 1s ease-in-out;
+  -ms-transition: all 1s ease-in-out;
+  transition: all 1s ease-in-out;
+  overflow: hidden;
+}
+
+.slide-out.show-menu {
+  width: 100%;
+  height: 100%;
+}
+
+/*--------------------------------------------------------------
+# Contents
+--------------------------------------------------------------*/
+/* Book props */
+.recent-title {
+  text-align: center;
+}
+
+.title {
+  text-align: left;
+}
+
+.category {
+  text-transform: uppercase;
+  font-size: 0.8em;
+  text-align: left;
+}
+
+.image {
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+}
+
+.article-image {
+  box-shadow: rgba(0, 0, 0, 0.856) 0px 25px 20px -20px;
+  border-radius: 10px;
+}
+
+.recent-image {
+  box-shadow: rgba(0, 0, 0, 0.856) 0px 25px 20px -20px;
+  border-radius: 10px;
+}
+
+/* Header */
+
+header {
+  background-color: white;
+}
+
+header h1 {
+  text-align: center;
+  padding: 0.5em;
+}
+
+/* Dashboard */
+.tooltip {
+  position: relative;
+}
+
+.tooltip-text {
+  visibility: hidden;
+  width: 120px;
+  background: #ffafbd;
+  background: -webkit-linear-gradient(to right, #ffc3a0, #ffafbd);
+  background: linear-gradient(to right, #ffc3a0, #ffafbd);
+  color: #fff;
+  text-align: center;
+  padding: 5px 0;
+  border-radius: 6px;
+  position: absolute;
+  z-index: 1;
+  bottom: 125%;
+  left: 50%;
+  margin-left: -60px;
+  opacity: 0;
+  transition: opacity 0.3s;
+  font-size: 0.8em;
+}
+
+.tooltip-text::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #ffc3a0 transparent transparent transparent;
+}
+
+.tooltip:hover .tooltip-text {
+  visibility: visible;
+  opacity: 1;
+}
+
+/* Home */
+.main {
+  margin: 0 5%;
+}
+
+/* Card */
+
+.container-white-background {
+  background-color: white;
+  border-radius: 10px;
+}
+
+/* Loading and Error Messages */
+
+.message {
+  font-size: 2em;
+}
+
+.loader {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-top: -50px;
+  margin-left: -50px;
+  z-index: 1;
+  width: 100px;
+  height: 100px;
+  border: 5px solid #f3f3f3;
+  border-radius: 50%;
+  border-top: 5px solid #000080;
+  -webkit-animation: spin 2s linear infinite;
+  animation: spin 2s linear infinite;
+}
+
+@-webkit-keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+  }
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Search Bar */
+.search-form {
+  display: flex;
+  justify-content: center;
+  margin-top: 1em;
+}
+
+.search {
+  width: 70%;
+  padding: 0.2em 0.5em;
+  border: none;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+}
+
+.search-btn {
+  background-color: #000080;
+  padding: 0.5em 0.7em;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+/* Misc  */
+/* Adds space so dashboard doesn't cover content*/
+.add-space {
+  height: 60px;
+}
+
+/*--------------------------------------------------------------
+# Media Queries
+--------------------------------------------------------------*/
+@media only screen and (min-width: 768px) {
+  body {
+    padding: 0 5%;
+  }
+  /*--------------------------------------------------------------
+  # CSS Grid - Desktop
+  --------------------------------------------------------------*/
+  .grid-container {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: auto;
+  }
+
+  /*--------------------------------------------------------------
+  # Contents - Desktop
+  --------------------------------------------------------------*/
+  header h1 {
+    text-align: center;
+    padding: 0.5em;
+  }
+
+  .flex-child {
+    flex: none;
+  }
+
+  .image {
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.856) 0px 25px 20px -20px;
+  }
+
+  .new-book-1 {
+    background-color: #729ea1;
+    padding: 1em;
+    border-radius: 10px;
+    margin: 1em 0;
+  }
+
+  .new-book-2 {
+    background-color: #729ea1;
+    padding: 1em;
+    border-radius: 10px;
+    margin: 1em 0;
+  }
+
+  .new-book-3 {
+    background-color: #729ea1;
+    padding: 1em;
+    border-radius: 10px;
+    margin: 1em 0;
+  }
+
+  .home-list {
+    background-color: white;
+    border-radius: 10px;
+  }
+
+  .home-list li:nth-child(1) {
+    font-size: 1.5em;
+  }
+
+  .home-list li {
+    padding: 1em;
+  }
+
+  .message {
+    font-size: 2em;
+  }
+
+  .loader {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    z-index: 1;
+    width: 120px;
+    height: 120px;
+    margin: -76px 0 0 -76px;
+    border: 10px solid #f3f3f3;
+    border-radius: 50%;
+    border-top: 10px solid #ffafbd;
+    -webkit-animation: spin 2s linear infinite;
+    animation: spin 2s linear infinite;
+  }
+
+  @-webkit-keyframes spin {
+    0% {
+      -webkit-transform: rotate(0deg);
+    }
+    100% {
+      -webkit-transform: rotate(360deg);
+    }
+  }
+
+  @keyframes spin {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+
+  /*--------------------------------------------------------------
+   ## Search - Desktop
+  --------------------------------------------------------------*/
+  .search {
+    width: 50%;
+  }
+}
